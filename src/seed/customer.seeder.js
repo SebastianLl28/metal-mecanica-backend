@@ -1,8 +1,5 @@
-import { v4 as uuid } from 'uuid'
-
 const listCustomer = [
   {
-    id: uuid(),
     name: 'José Pedro',
     lastname: 'Pascal',
     email: 'josepascal@gmail.com',
@@ -11,7 +8,6 @@ const listCustomer = [
     identification: '75678120'
   },
   {
-    id: uuid(),
     name: 'Maria',
     lastname: 'Rodriguez',
     email: 'maria.rodriguez@example.com',
@@ -20,7 +16,6 @@ const listCustomer = [
     identification: '89012345'
   },
   {
-    id: uuid(),
     name: 'John',
     lastname: 'Doe',
     email: 'john.doe@example.com',
@@ -29,7 +24,6 @@ const listCustomer = [
     identification: '67890123'
   },
   {
-    id: uuid(),
     name: 'Alice',
     lastname: 'Johnson',
     email: 'alice.johnson@example.com',
@@ -38,7 +32,6 @@ const listCustomer = [
     identification: '34567890'
   },
   {
-    id: uuid(),
     name: 'Carlos',
     lastname: 'Gonzalez',
     email: 'carlos.gonzalez@example.com',
@@ -47,7 +40,6 @@ const listCustomer = [
     identification: '12345678'
   },
   {
-    id: uuid(),
     name: 'Christian',
     lastname: 'Perez',
     email: 'christian.perez@example.com',
@@ -56,7 +48,6 @@ const listCustomer = [
     identification: '123456789451'
   },
   {
-    id: uuid(),
     name: 'Ana',
     lastname: 'García',
     email: 'ana.garcia@example.com',
@@ -65,7 +56,6 @@ const listCustomer = [
     identification: '789012345612'
   },
   {
-    id: uuid(),
     name: 'Ricardo',
     lastname: 'Martínez',
     email: 'ricardo.martinez@example.com',
@@ -74,7 +64,6 @@ const listCustomer = [
     identification: '456789012373'
   },
   {
-    id: uuid(),
     name: 'Elena',
     lastname: 'Sánchez',
     email: 'elena.sanchez@example.com',
@@ -83,7 +72,6 @@ const listCustomer = [
     identification: '890123456124'
   },
   {
-    id: uuid(),
     name: 'Diego',
     lastname: 'López',
     email: 'diego.lopez@example.com',
@@ -92,7 +80,6 @@ const listCustomer = [
     identification: '234567890435'
   },
   {
-    id: uuid(),
     name: 'Pedro SAC',
     email: 'pedrosac@gmail.com',
     address: 'Av. Proceres 567',
@@ -100,7 +87,6 @@ const listCustomer = [
     ruc: '11235412541'
   },
   {
-    id: uuid(),
     name: 'Tech Innovations S.A.',
     email: 'info@techinnovations.com',
     address: 'Calle Tecno 123',
@@ -108,7 +94,6 @@ const listCustomer = [
     ruc: '23456789012'
   },
   {
-    id: uuid(),
     name: 'Green Energy Solutions SAC',
     email: 'contact@greenenergy.com',
     address: 'Eco Street 456',
@@ -116,7 +101,6 @@ const listCustomer = [
     ruc: '34567890123'
   },
   {
-    id: uuid(),
     name: 'Express Logistics Peru S.A.C.',
     email: 'info@expresslogistics.com',
     address: 'Fast Lane 789',
@@ -124,7 +108,6 @@ const listCustomer = [
     ruc: '45678901234'
   },
   {
-    id: uuid(),
     name: 'Global Financial Services SA',
     email: 'info@gfs.com',
     address: 'Finance Avenue 101',

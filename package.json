@@ -32,7 +32,6 @@
     "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
     "eslint-plugin-promise": "^6.0.0",
     "nodemon": "^3.0.1",
-    "prettier": "^3.1.0",
-    "uuid": "^9.0.1"
+    "prettier": "^3.1.0"
   }
 }
