@@ -10,7 +10,7 @@ Sequelize ORM: Facilita la interacción con la base de datos MySQL, permitiendo 
 
 Autenticación JWT: Proporciona un sistema seguro para la autenticación de usuarios y la gestión de sesiones.
 
-## Variables de Entorno {#variables-de-entorno}
+## Variables de Entorno
 
 Para ejecutar este proyecto, deberá agregar las siguientes variables de entorno a su archivo `.env` . De igual manera puede tomar de ejemplo el archivo `.env.example`
 
@@ -39,7 +39,7 @@ Ingresa a la carpeta clonada y desacarga las dependencias con npm
   npm install
 ```
 
-Configura las variables de entorno creando un archivo .env y colocando las variables mencionadas en la sección de [Variables de Entorno](#variables-de-entorno).
+Configura las variables de entorno creando un archivo .env y colocando las variables mencionadas en la sección de **Variables de Entorno**.
 
 Crea una base de datos MySQL según el nombre especificado en la variable `DB_NAME` y ejecuta el seeder para crear la estructura de la base de datos
 
