@@ -1,7 +1,7 @@
 const listCustomer = [
   {
     name: 'José Pedro',
-    lastname: 'Pascal',
+    lastName: 'Pascal',
     email: 'josepascal@gmail.com',
     address: 'Av. Las Ortigas 234',
     phone: '987654321',
@@ -9,7 +9,7 @@ const listCustomer = [
   },
   {
     name: 'Maria',
-    lastname: 'Rodriguez',
+    lastName: 'Rodriguez',
     email: 'maria.rodriguez@example.com',
     address: 'Calle del Sol 123',
     phone: '987654321',
@@ -17,7 +17,7 @@ const listCustomer = [
   },
   {
     name: 'John',
-    lastname: 'Doe',
+    lastName: 'Doe',
     email: 'john.doe@example.com',
     address: '123 Main Street',
     phone: '987654321',
@@ -25,7 +25,7 @@ const listCustomer = [
   },
   {
     name: 'Alice',
-    lastname: 'Johnson',
+    lastName: 'Johnson',
     email: 'alice.johnson@example.com',
     address: '456 Oak Avenue',
     phone: '987654321',
@@ -33,7 +33,7 @@ const listCustomer = [
   },
   {
     name: 'Carlos',
-    lastname: 'Gonzalez',
+    lastName: 'Gonzalez',
     email: 'carlos.gonzalez@example.com',
     address: '789 Elm Lane',
     phone: '987654321',
@@ -41,7 +41,7 @@ const listCustomer = [
   },
   {
     name: 'Christian',
-    lastname: 'Perez',
+    lastName: 'Perez',
     email: 'christian.perez@example.com',
     address: '321 Maple Street',
     phone: '987654321',
@@ -49,7 +49,7 @@ const listCustomer = [
   },
   {
     name: 'Ana',
-    lastname: 'García',
+    lastName: 'García',
     email: 'ana.garcia@example.com',
     address: '456 Oak Avenue',
     phone: '123456789',
@@ -57,7 +57,7 @@ const listCustomer = [
   },
   {
     name: 'Ricardo',
-    lastname: 'Martínez',
+    lastName: 'Martínez',
     email: 'ricardo.martinez@example.com',
     address: '789 Elm Lane',
     phone: '987654321',
@@ -65,7 +65,7 @@ const listCustomer = [
   },
   {
     name: 'Elena',
-    lastname: 'Sánchez',
+    lastName: 'Sánchez',
     email: 'elena.sanchez@example.com',
     address: '123 Pine Road',
     phone: '987294789',
@@ -73,7 +73,7 @@ const listCustomer = [
   },
   {
     name: 'Diego',
-    lastname: 'López',
+    lastName: 'López',
     email: 'diego.lopez@example.com',
     address: '567 Cedar Drive',
     phone: '963258741',
