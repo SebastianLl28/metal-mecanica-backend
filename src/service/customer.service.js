@@ -1,7 +1,7 @@
 import Customer from '../model/Customer.js'
 
 export const findAllCustomer = async (query = {}) =>
-  await Customer.findAll(query)
+  await Customer.findAndCountAll(query)
 
 export const findCustomerById = async id => await Customer.findByPk(id)
 

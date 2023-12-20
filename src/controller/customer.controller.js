@@ -1,3 +1,4 @@
+import { Op } from 'sequelize'
 import {
   findAllCustomer,
   findCustomerById,
@@ -12,8 +13,30 @@ import {
  */
 export const getfindAll = async (req, res) => {
   try {
-    const customers = await findAllCustomer()
-    res.status(200).json(customers)
+    const obj = {
+      limit: 10
+    }
+
+    const { name, customerType, pagination } = req.query
+    if (name) obj.where = { name: { [Op.like]: `%${name}%` } }
+    // Las personas que no tienen apellidos son company y las personas que si tienen son person
+    if (customerType === 'company') obj.where = { ...obj.where, lastName: null }
+    if (customerType === 'person') {
+      obj.where = { ...obj.where, lastName: { [Op.ne]: null } }
+    }
+
+    if (pagination) {
+      obj.offset = (pagination - 1) * obj.limit
+    }
+    const { rows, count } = await findAllCustomer(obj)
+    const response = {
+      info: {
+        count,
+        pages: Math.ceil(count / obj.limit)
+      },
+      results: rows
+    }
+    res.status(200).json(response)
   } catch (error) {
     res.status(500).json({ message: error.message })
     console.log(error)
