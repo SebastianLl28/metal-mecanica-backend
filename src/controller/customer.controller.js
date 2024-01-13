@@ -28,6 +28,8 @@ export const getfindAll = async (req, res) => {
     if (pagination) {
       obj.offset = (pagination - 1) * obj.limit
     }
+    // order by createAt
+    obj.order = [['createdAt', 'ASC']]
     const { rows, count } = await findAllCustomer(obj)
     const response = {
       info: {
