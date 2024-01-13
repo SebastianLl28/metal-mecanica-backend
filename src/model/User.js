@@ -1,5 +1,6 @@
 import db from '../config/db.js'
 import { DataTypes } from 'sequelize'
+import Role from './Role.js'
 
 const User = db.define(
   'user',
@@ -14,6 +15,10 @@ const User = db.define(
       type: DataTypes.STRING(50),
       allowNull: false
     },
+    lastName: {
+      type: DataTypes.STRING(50),
+      allowNull: false
+    },
     email: {
       type: DataTypes.STRING(100),
       allowNull: false
@@ -21,6 +26,19 @@ const User = db.define(
     password: {
       type: DataTypes.STRING(100),
       allowNull: false
+    },
+    document: {
+      type: DataTypes.STRING(20),
+      allowNull: false,
+      unique: true
+    },
+    roleId: {
+      type: DataTypes.UUID,
+      allowNull: false,
+      references: {
+        model: Role,
+        key: 'id'
+      }
     }
   },
   {

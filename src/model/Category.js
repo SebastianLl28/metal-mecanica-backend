@@ -17,11 +17,6 @@ const Category = db.define(
     description: {
       type: DataTypes.STRING(100),
       allowNull: false
-    },
-    image: {
-      type: DataTypes.STRING(100),
-      allowNull: false,
-      defaultValue: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
     }
   },
   {

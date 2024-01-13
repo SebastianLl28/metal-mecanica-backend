@@ -18,19 +18,16 @@ const Customer = db.define(
       type: DataTypes.STRING(50)
     },
     email: {
-      type: DataTypes.STRING(100),
-      allowNull: false
+      type: DataTypes.STRING(100)
     },
     address: {
-      type: DataTypes.STRING(100),
-      allowNull: false
+      type: DataTypes.STRING(100)
     },
     phone: {
-      type: DataTypes.STRING(20),
-      allowNull: false
+      type: DataTypes.STRING(20)
     },
     // dni o CE
-    identification: {
+    document: {
       type: DataTypes.STRING(20)
     },
     ruc: {
