@@ -1,4 +1,4 @@
-const listCustomer = [
+export const listCustomer = [
   {
     name: 'José Pedro',
     lastName: 'Pascal',
@@ -307,5 +307,3 @@ const listCustomer = [
     ruc: '23456789012'
   }
 ]
-
-export default listCustomer
