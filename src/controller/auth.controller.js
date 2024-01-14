@@ -1,3 +1,4 @@
+import { compareText, hashText } from '../helpers/bcrypt.js'
 import { generateToken } from '../helpers/jsonwebtoken.js'
 import { createUser, findUserByEmail } from '../service/user.service.js'
 
@@ -20,7 +21,10 @@ export const postRegisterUser = async (req, res) => {
       return res.status(400).send({ message: 'El usuario ya existe' })
     }
 
-    const user = await createUser({ name, email, password })
+    const passwordHash = await hashText(password)
+
+    const user = await createUser({ name, email, password: passwordHash })
+
     const viewUser = {
       id: user.id,
       name: user.name,
@@ -46,9 +50,13 @@ export const postLoginUser = async (req, res) => {
     if (!user) {
       return res.status(400).send({ message: 'Usuario no encontrado' })
     }
-    if (user.password !== password) {
-      return res.status(400).send({ message: 'Contraseña incorrecta' })
+
+    const result = await compareText(password, user.password)
+
+    if (!result) {
+      return res.status(400).send({ message: 'Usuario no encontrado' })
     }
+
     const viewUser = {
       id: user.id,
       name: user.name,
