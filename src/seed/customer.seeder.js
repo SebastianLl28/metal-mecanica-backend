@@ -5,7 +5,7 @@ export const listCustomer = [
     email: 'josepascal@gmail.com',
     address: 'Av. Las Ortigas 234',
     phone: '987654321',
-    identification: '75678120'
+    document: '75678120'
   },
   {
     name: 'Maria',
@@ -13,7 +13,7 @@ export const listCustomer = [
     email: 'maria.rodriguez@example.com',
     address: 'Calle del Sol 123',
     phone: '987654321',
-    identification: '89012345'
+    document: '89012345'
   },
   {
     name: 'John',
@@ -21,7 +21,7 @@ export const listCustomer = [
     email: 'john.doe@example.com',
     address: '123 Main Street',
     phone: '987654321',
-    identification: '67890123'
+    document: '67890123'
   },
   {
     name: 'Alice',
@@ -29,7 +29,7 @@ export const listCustomer = [
     email: 'alice.johnson@example.com',
     address: '456 Oak Avenue',
     phone: '987654321',
-    identification: '34567890'
+    document: '34567890'
   },
   {
     name: 'Carlos',
@@ -37,7 +37,7 @@ export const listCustomer = [
     email: 'carlos.gonzalez@example.com',
     address: '789 Elm Lane',
     phone: '987654321',
-    identification: '12345678'
+    document: '12345678'
   },
   {
     name: 'Christian',
@@ -45,7 +45,7 @@ export const listCustomer = [
     email: 'christian.perez@example.com',
     address: '321 Maple Street',
     phone: '987654321',
-    identification: '123456789451'
+    document: '123456789451'
   },
   {
     name: 'Ana',
@@ -53,7 +53,7 @@ export const listCustomer = [
     email: 'ana.garcia@example.com',
     address: '456 Oak Avenue',
     phone: '123456789',
-    identification: '789012345612'
+    document: '789012345612'
   },
   {
     name: 'Ricardo',
@@ -61,7 +61,7 @@ export const listCustomer = [
     email: 'ricardo.martinez@example.com',
     address: '789 Elm Lane',
     phone: '987654321',
-    identification: '456789012373'
+    document: '456789012373'
   },
   {
     name: 'Elena',
@@ -69,7 +69,7 @@ export const listCustomer = [
     email: 'elena.sanchez@example.com',
     address: '123 Pine Road',
     phone: '987294789',
-    identification: '890123456124'
+    document: '890123456124'
   },
   {
     name: 'Diego',
@@ -77,7 +77,7 @@ export const listCustomer = [
     email: 'diego.lopez@example.com',
     address: '567 Cedar Drive',
     phone: '963258741',
-    identification: '234567890435'
+    document: '234567890435'
   },
   {
     name: 'Pedro SAC',
@@ -114,7 +114,7 @@ export const listCustomer = [
     email: 'bruce@example.com',
     address: '456 Oak Avenue',
     phone: '123456789',
-    identification: '789012345612'
+    document: '789012345612'
   },
   {
     name: 'Alice',
@@ -122,7 +122,7 @@ export const listCustomer = [
     email: 'alice.johnson@example.com',
     address: '123 Elm Street',
     phone: '5551112233',
-    identification: '456789012345'
+    document: '456789012345'
   },
   {
     name: 'Bob',
@@ -130,7 +130,7 @@ export const listCustomer = [
     email: 'bob.miller@example.com',
     address: '789 Cedar Avenue',
     phone: '9876543210',
-    identification: '789012345678'
+    document: '789012345678'
   },
   {
     name: 'Eva',
@@ -138,7 +138,7 @@ export const listCustomer = [
     email: 'eva.williams@example.com',
     address: '567 Birch Road',
     phone: '1234567890',
-    identification: '234567890123'
+    document: '234567890123'
   },
   {
     name: 'David',
@@ -146,7 +146,7 @@ export const listCustomer = [
     email: 'david.brown@example.com',
     address: '890 Pine Street',
     phone: '5556667777',
-    identification: '678901234567'
+    document: '678901234567'
   },
   {
     name: 'Grace',
@@ -154,7 +154,7 @@ export const listCustomer = [
     email: 'grace.taylor@example.com',
     address: '234 Oak Lane',
     phone: '1112223333',
-    identification: '345678901234'
+    document: '345678901234'
   },
   {
     name: 'Michael',
@@ -162,7 +162,7 @@ export const listCustomer = [
     email: 'michael.clark@example.com',
     address: '567 Pine Avenue',
     phone: '3334445555',
-    identification: '890123456789'
+    document: '890123456789'
   },
   {
     name: 'Samantha',
@@ -170,7 +170,7 @@ export const listCustomer = [
     email: 'samantha.walker@example.com',
     address: '123 Birch Lane',
     phone: '7778889999',
-    identification: '012345678901'
+    document: '012345678901'
   },
   {
     name: 'Daniel',
@@ -178,7 +178,7 @@ export const listCustomer = [
     email: 'daniel.wright@example.com',
     address: '456 Cedar Road',
     phone: '2223334444',
-    identification: '789012345678'
+    document: '789012345678'
   },
   {
     name: 'Olivia',
@@ -186,7 +186,7 @@ export const listCustomer = [
     email: 'olivia.roberts@example.com',
     address: '789 Oak Street',
     phone: '4445556666',
-    identification: '901234567890'
+    document: '901234567890'
   },
   {
     name: 'Ryan',
@@ -194,7 +194,7 @@ export const listCustomer = [
     email: 'ryan.harrison@example.com',
     address: '890 Maple Lane',
     phone: '6667778888',
-    identification: '123456789012'
+    document: '123456789012'
   },
   {
     name: 'Sophia',
@@ -202,7 +202,7 @@ export const listCustomer = [
     email: 'sophia.carter@example.com',
     address: '234 Elm Avenue',
     phone: '5556667777',
-    identification: '234567890123'
+    document: '234567890123'
   },
   {
     name: 'Ethan',
@@ -210,7 +210,7 @@ export const listCustomer = [
     email: 'ethan.baker@example.com',
     address: '678 Cedar Street',
     phone: '8889990000',
-    identification: '345678901234'
+    document: '345678901234'
   },
   {
     name: 'Ava',
@@ -218,7 +218,7 @@ export const listCustomer = [
     email: 'ava.perez@example.com',
     address: '345 Pine Road',
     phone: '1112223333',
-    identification: '456789012345'
+    document: '456789012345'
   },
   {
     name: 'Matthew',
@@ -226,7 +226,7 @@ export const listCustomer = [
     email: 'matthew.gonzalez@example.com',
     address: '456 Elm Lane',
     phone: '9990001111',
-    identification: '567890123456'
+    document: '567890123456'
   },
   {
     name: 'Emma',
@@ -234,7 +234,7 @@ export const listCustomer = [
     email: 'emma.fisher@example.com',
     address: '789 Birch Street',
     phone: '2223334444',
-    identification: '678901234567'
+    document: '678901234567'
   },
   {
     name: 'Data Solutions LLC',
