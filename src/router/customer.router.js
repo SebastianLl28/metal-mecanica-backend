@@ -14,7 +14,7 @@ const router = Router()
 router.get('/', getfindAll)
 router.get('/:id', getfindById)
 router.post('/', schemeValidation(registerCustomerSchema), postCreate)
-router.put('/:id', schemeValidation(registerCustomerSchema), putUpdate)
+router.put('/:id', putUpdate)
 router.delete('/:id', deleteDeleteById)
 
 export default router

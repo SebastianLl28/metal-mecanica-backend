@@ -6,6 +6,6 @@ export const registerCustomerSchema = z.object({
   email: z.string().email(),
   address: z.string().min(1),
   phone: z.string().min(1),
-  identification: z.string().min(8).max(12).optional().nullable(),
+  document: z.string().min(8).max(12).optional().nullable(),
   ruc: z.string().max(11).optional().nullable()
 })
