@@ -14,9 +14,10 @@ const Category = db.define(
       type: DataTypes.STRING(50),
       allowNull: false
     },
-    description: {
-      type: DataTypes.STRING(100),
-      allowNull: false
+    state: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: true
     }
   },
   {
