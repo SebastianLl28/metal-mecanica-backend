@@ -10,10 +10,6 @@ const Product = db.define(
       allowNull: false,
       defaultValue: DataTypes.UUIDV4
     },
-    name: {
-      type: DataTypes.STRING(50),
-      allowNull: false
-    },
     description: {
       type: DataTypes.STRING(100),
       allowNull: false
@@ -33,7 +29,7 @@ const Product = db.define(
     image: {
       type: DataTypes.STRING(100),
       allowNull: false,
-      defaultValue: 'noimagecloudXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+      defaultValue: 'https://cdn-icons-png.flaticon.com/128/6652/6652301.png'
     },
     categoryId: {
       type: DataTypes.UUID,
@@ -42,6 +38,11 @@ const Product = db.define(
         model: 'category',
         key: 'id'
       }
+    },
+    status: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: true
     }
   },
   {

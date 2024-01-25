@@ -1,17 +1,17 @@
 export const listCategory = [
   {
-    name: 'Mangueras de Freno'
+    name: 'Adaptador'
   },
   {
-    name: 'Horquillas'
+    name: 'Regulador'
   },
   {
-    name: 'Perno Caliper'
-  },
-  {
-    name: 'Arandelas de Cobre'
+    name: 'Rotulas'
   },
   {
     name: 'Tapones de Agua de Bronce'
+  },
+  {
+    name: 'Arandelas de Cobre'
   }
 ]

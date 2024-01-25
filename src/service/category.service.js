@@ -10,3 +10,6 @@ export const createCategory = async categCategory =>
 
 export const updateCategory = async (id, categCategory) =>
   await Category.update(categCategory, { where: { id } })
+
+export const findCategoryByName = async name =>
+  await Category.findOne({ where: { name } })

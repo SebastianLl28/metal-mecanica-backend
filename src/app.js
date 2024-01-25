@@ -1,7 +1,12 @@
 import express from 'express'
 import morgan from 'morgan'
 import cors from 'cors'
-import { authRouter, customerRouter, categoryRouter } from './router/index.js'
+import {
+  authRouter,
+  customerRouter,
+  categoryRouter,
+  productRouter
+} from './router/index.js'
 
 const app = express()
 
@@ -22,5 +27,6 @@ app.use(morgan('dev'))
 app.use('/api/auth', authRouter)
 app.use('/api/customer', customerRouter)
 app.use('/api/category', categoryRouter)
+app.use('/api/product', productRouter)
 
 export default app
