@@ -5,7 +5,9 @@ import {
   authRouter,
   customerRouter,
   categoryRouter,
-  productRouter
+  productRouter,
+  orderRouter,
+  orderDetailRouter
 } from './router/index.js'
 
 const app = express()
@@ -28,5 +30,7 @@ app.use('/api/auth', authRouter)
 app.use('/api/customer', customerRouter)
 app.use('/api/category', categoryRouter)
 app.use('/api/product', productRouter)
+app.use('/api/orderDetail', orderDetailRouter)
+app.use('/api/order', orderRouter)
 
 export default app

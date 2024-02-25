@@ -19,20 +19,27 @@ const Order = db.define(
       }
     },
     status: {
-      type: DataTypes.ENUM('pending', 'completed'),
+      type: DataTypes.ENUM(
+        'pending',
+        'in_progress',
+        'ready_to_ship',
+        'in_transit',
+        'completed',
+        'canceled'
+      ),
       allowNull: false,
       defaultValue: 'pending',
       validate: {
-        isIn: [['pending', 'completed']]
-      }
-    },
-    date: {
-      type: DataTypes.DATE,
-      allowNull: false,
-      defaultValue: DataTypes.NOW,
-      validate: {
-        isDate: true,
-        notEmpty: true
+        isIn: [
+          [
+            'pending',
+            'in_progress',
+            'ready_to_ship',
+            'in_transit',
+            'completed',
+            'canceled'
+          ]
+        ]
       }
     },
     customerId: {

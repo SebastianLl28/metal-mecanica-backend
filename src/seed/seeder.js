@@ -8,7 +8,7 @@ import {
   listProduct
 } from './index.js'
 import Customer from '../model/Customer.js'
-import { User, Role, Category, Product } from '../model/index.js'
+import { User, Role, Category, Product, Order } from '../model/index.js'
 
 const importarDatos = async () => {
   try {
@@ -19,7 +19,8 @@ const importarDatos = async () => {
       Customer.destroy({ where: {} }),
       User.destroy({ where: {} }),
       Product.destroy({ where: {} }),
-      Category.destroy({ where: {} })
+      Category.destroy({ where: {} }),
+      Order.destroy({ where: {} })
     ])
     await Role.bulkCreate(listRole)
     await Category.bulkCreate(listCategory)
@@ -28,7 +29,8 @@ const importarDatos = async () => {
     await Promise.all([
       User.bulkCreate(listUserLast),
       Customer.bulkCreate(listCustomer),
-      Product.bulkCreate(listProductLast)
+      Product.bulkCreate(listProductLast),
+      Order.bulkCreate([])
     ])
     console.log('Datos Importados correctamente')
     exit()
