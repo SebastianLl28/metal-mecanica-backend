@@ -1,6 +1,7 @@
 import db from '../config/db.js'
 import { DataTypes } from 'sequelize'
 import Role from './Role.js'
+import { findRoleByName } from '../service/role.service.js'
 
 const User = db.define(
   'user',
@@ -34,7 +35,6 @@ const User = db.define(
     },
     roleId: {
       type: DataTypes.UUID,
-      allowNull: false,
       references: {
         model: Role,
         key: 'id'
@@ -47,5 +47,10 @@ const User = db.define(
     freezeTableName: true
   }
 )
+
+User.addHook('beforeCreate', async user => {
+  user.roleId = await findRoleByName('STORE').then(role => role.id)
+  return user
+})
 
 export default User
