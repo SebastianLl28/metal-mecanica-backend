@@ -9,7 +9,7 @@
     "lint": "eslint --fix . --ext .js",
     "format": "prettier --write",
     "start:db": "./startMysql.sh",
-    "import:db": "node ./src/seed/seeder.js"
+    "db:import": "node ./src/seed/seeder.js"
   },
   "keywords": [],
   "author": "",

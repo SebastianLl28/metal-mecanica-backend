@@ -1,8 +1,14 @@
 import { exit } from 'node:process'
 import db from '../config/db.js'
-import { listCustomer, listRole, listUser, listCategory } from './index.js'
+import {
+  listCustomer,
+  listRole,
+  listUser,
+  listCategory,
+  listProduct
+} from './index.js'
 import Customer from '../model/Customer.js'
-import { User, Role, Category } from '../model/index.js'
+import { User, Role, Category, Product, Order } from '../model/index.js'
 
 const importarDatos = async () => {
   try {
@@ -12,14 +18,19 @@ const importarDatos = async () => {
       Role.destroy({ where: {} }),
       Customer.destroy({ where: {} }),
       User.destroy({ where: {} }),
-      Category.destroy({ where: {} })
+      Product.destroy({ where: {} }),
+      Category.destroy({ where: {} }),
+      Order.destroy({ where: {} })
     ])
     await Role.bulkCreate(listRole)
+    await Category.bulkCreate(listCategory)
     const listUserLast = await listUser()
+    const listProductLast = await listProduct()
     await Promise.all([
       User.bulkCreate(listUserLast),
       Customer.bulkCreate(listCustomer),
-      Category.bulkCreate(listCategory)
+      Product.bulkCreate(listProductLast),
+      Order.bulkCreate([])
     ])
     console.log('Datos Importados correctamente')
     exit()

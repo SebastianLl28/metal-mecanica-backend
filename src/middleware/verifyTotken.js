@@ -8,15 +8,17 @@ import { findUserById } from '../service/user.service.js'
  */
 export const verifyTotken = async (req, res, next) => {
   try {
-    const findToken = req.headers.token
-    if (!findToken) return res.status(401).json({ message: 'Unauthorized' })
-    const payload = verifyTokenSecretKey(findToken)
+    const authHeader = req.headers.authorization
+    if (!authHeader) return res.status(401).json({ message: 'Unauthorized' })
+    const token = authHeader.split(' ')[1]
+    const payload = verifyTokenSecretKey(token)
     if (!payload) return res.status(401).json({ message: 'Unauthorized' })
     const findUser = await findUserById(payload.id)
     if (!findUser) return res.status(401).json({ message: 'Unauthorized' })
     req.user = findUser
     next()
   } catch (error) {
+    console.log(error)
     return res.status(401).json({ message: 'Unauthorized' })
   }
 }

@@ -18,7 +18,7 @@ const OrderDetail = db.define(
         min: 1
       }
     },
-    // El price va por que puede variar pero se puede almacenar
+    // ? El precio del producto se almacena ya que a lo largo del tiempo puede ir cambiando
     price: {
       type: DataTypes.DOUBLE,
       allowNull: false,

@@ -1,3 +1,6 @@
 export { default as authRouter } from './auth.router.js'
 export { default as customerRouter } from './customer.router.js'
 export { default as categoryRouter } from './category.router.js'
+export { default as productRouter } from './product.router.js'
+export { default as orderRouter } from './order.router.js'
+export { default as orderDetailRouter } from './orderDetail.router.js'
