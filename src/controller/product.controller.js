@@ -1,3 +1,4 @@
+import { Op } from 'sequelize'
 import {
   findAllProduct,
   findProductById,
@@ -5,10 +6,38 @@ import {
   updateProduct
 } from '../service/product.service.js'
 
+/**
+ * @param {import('express').Request} req
+ * @param {import('express').Response} res
+ */
 export const getAllProducts = async (req, res) => {
   try {
-    const product = await findAllProduct({ where: { status: true } })
-    res.status(200).json(product)
+    const obj = {
+      limit: 10,
+      where: { status: true }
+    }
+
+    const { name, pagination } = req.query
+
+    if (name) obj.where = { name: { [Op.like]: `%${name}%` } }
+
+    if (pagination) {
+      obj.offset = (pagination - 1) * obj.limit
+    }
+
+    obj.order = [['createdAt', 'ASC']]
+
+    const { rows, count } = await findAllProduct(obj)
+
+    const response = {
+      info: {
+        count,
+        pages: Math.ceil(count / obj.limit)
+      },
+      results: rows
+    }
+
+    res.status(200).json(response)
   } catch (error) {
     console.log(error)
     res.status(500).json({ message: error.message })
