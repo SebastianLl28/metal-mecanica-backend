@@ -5,7 +5,8 @@ import {
   updateCategory
 } from '../service/category.service.js'
 
-export const getAllCategories = async (req, res) => {
+// TODO: Add pagination, page, etc
+export const getCategories = async (req, res) => {
   try {
     const categories = await findAllCategory({ where: { state: true } })
     res.status(200).json(categories)
@@ -14,6 +15,16 @@ export const getAllCategories = async (req, res) => {
     res
       .status(500)
       .json({ message: 'Error en el servidor al buscar todas las categorías' })
+  }
+}
+
+export const getAllCategories = async (req, res) => {
+  try {
+    const { rows } = await findAllCategory({ where: { state: true } })
+    res.status(200).json({ categories: rows })
+  } catch (error) {
+    console.log(error)
+    res.status(500).json({ message: 'Error al buscar todas las categorías' })
   }
 }
 
