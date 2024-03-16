@@ -5,12 +5,13 @@ import {
   postOrder,
   putOrder
 } from '../controller/order.controller.js'
+import { verifyTotken } from '../middleware/verifyTotken.js'
 
 const router = Router()
 
-router.get('/', getOrders)
-router.get('/:id', getOrder)
-router.post('/', postOrder)
-router.put('/:id', putOrder)
+router.get('/', verifyTotken, getOrders)
+router.get('/:id', verifyTotken, getOrder)
+router.post('/', verifyTotken, postOrder)
+router.put('/:id', verifyTotken, putOrder)
 
 export default router
