@@ -9,3 +9,6 @@ export const createProduct = async product => await Product.create(product)
 
 export const updateProduct = async (id, product) =>
   await Product.update(product, { where: { id } })
+
+export const findProductByDescription = async description =>
+  await Product.findOne({ where: { description } })

@@ -1,6 +1,9 @@
 import 'dotenv/config.js'
 import app from './app.js'
 import db from './config/db.js'
+import multer from 'multer'
+
+multer({ dest: 'src/uploads' })
 
 const connectDB = async () => {
   try {

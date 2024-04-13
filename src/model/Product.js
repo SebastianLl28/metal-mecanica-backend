@@ -27,7 +27,7 @@ const Product = db.define(
       }
     },
     image: {
-      type: DataTypes.STRING(100),
+      type: DataTypes.TEXT,
       allowNull: false,
       defaultValue: 'https://cdn-icons-png.flaticon.com/128/6652/6652301.png'
     },

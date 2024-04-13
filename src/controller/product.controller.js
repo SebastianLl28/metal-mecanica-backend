@@ -3,8 +3,10 @@ import {
   findAllProduct,
   findProductById,
   createProduct,
-  updateProduct
+  updateProduct,
+  findProductByDescription
 } from '../service/product.service.js'
+import { findCategoryById } from '../service/category.service.js'
 
 /**
  * @param {import('express').Request} req
@@ -61,11 +63,25 @@ export const getProductById = async (req, res) => {
 export const postProduct = async (req, res) => {
   try {
     const { description, price, stock, categoryId } = req.body
+    const findCategory = await findCategoryById(categoryId)
+    if (!findCategory) {
+      return res.status(404).json({ message: 'Categoria no encontrada' })
+    }
+    const findProductDescription = await findProductByDescription(description)
+    if (findProductDescription) {
+      return res.status(400).json({ message: 'Producto ya existe' })
+    }
+    if (!req.file) {
+      return res.status(400).json({ message: 'Imagen requerida' })
+    }
+    console.log(req.file)
+
     await createProduct({
       description,
       price,
       stock,
-      categoryId
+      categoryId,
+      image: req.file.filename
     })
     res.status(201).json({ message: 'Producto creado correctamente' })
   } catch (error) {
