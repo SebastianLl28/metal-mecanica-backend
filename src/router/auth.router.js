@@ -16,6 +16,8 @@ router.post('/register', schemeValidation(registerUserSchema), postRegisterUser)
  * @swagger
  * /api/auth/login:
  *   post:
+ *     tags:
+ *       - auth
  *     summary: Login user
  *     description: Use to login user with email and password
  *     requestBody:
