@@ -6,7 +6,7 @@ import { findUserById } from '../service/user.service.js'
  * @param {import('express').Response} res
  * @param {import('express').NextFunction} next
  */
-export const verifyTotken = async (req, res, next) => {
+export const verifyToken = async (req, res, next) => {
   try {
     const authHeader = req.headers.authorization
     if (!authHeader) return res.status(401).json({ message: 'Unauthorized' })
