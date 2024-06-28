@@ -58,32 +58,32 @@ export const postRegisterUser = async (req, res) => {
  */
 export const postLoginUser = async (req, res) => {
   try {
+    // Get email and password from request body
     const { email, password } = req.body
-    if (!email || !password) {
-      return res.status(400).json({ message: 'Faltan datos' })
-    }
+
+    // Check if email and password are not empty
     const user = await findUserByEmail(email)
     if (!user) {
-      return res.status(400).json({ message: 'Usuario no encontrado' })
+      return res.status(401).json({ message: 'Incorrect email or password' })
     }
 
+    // Compare password with the hash stored in the database
     const result = await compareText(password, user.password)
-
     if (!result) {
-      return res.status(400).json({ message: 'Usuario no encontrado' })
+      return res.status(401).json({ message: 'Incorrect email or password' })
     }
 
+    // Create a view user object
     const viewUser = {
       id: user.id,
       name: user.name,
       email: user.email
     }
-
+    // Generate a token and send it as a response
     const token = generateToken(viewUser)
-
     res.status(200).json({ token })
   } catch (error) {
-    res.status(500).json({ message: 'Error del servidor' })
+    res.status(500).json({ message: 'Something went wrong' })
   }
 }
 
