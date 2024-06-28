@@ -1,4 +1,3 @@
-import { expect } from '@jest/globals'
 import app from '../src/app'
 import request from 'supertest'
 
@@ -83,5 +82,34 @@ describe('POST /api/auth/login', () => {
         message: 'Invalid email'
       })
     })
+  })
+})
+
+describe('GET api/auth/verifyToken', () => {
+  it('should return 200 OK', async () => {
+    const user = {
+      email: 'admin@admin.com',
+      password: '123456789'
+    }
+    const responseLogin = await request(app).post('/api/auth/login').send(user)
+    const token = responseLogin.body.token
+    const response = await request(app)
+      .get('/api/auth/verifyToken')
+      .set('Authorization', `Bearer ${token}`)
+    expect(response.status).toBe(200)
+    expect(response.body).toHaveProperty('message', 'Token is valid')
+  })
+
+  it('should return 401 Unauthorized', async () => {
+    const response = await request(app)
+      .get('/api/auth/verifyToken')
+      .set('Authorization', 'Bearer invalidToken')
+    expect(response.status).toBe(401)
+    expect(response.body).toHaveProperty('message', 'Unauthorized')
+  })
+
+  it('should return 401 Unauthorized without token', async () => {
+    const response = await request(app).get('/api/auth/verifyToken')
+    expect(response.status).toBe(401)
   })
 })
