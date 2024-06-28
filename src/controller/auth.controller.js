@@ -93,7 +93,7 @@ export const postLoginUser = async (req, res) => {
  */
 export const getVerifyToken = (req, res) => {
   try {
-    res.status(200).json({ message: 'Token valido' })
+    res.status(200).json({ message: 'Token is valid' })
   } catch (error) {
     res.status(500).send(error)
   }
