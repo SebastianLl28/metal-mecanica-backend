@@ -8,19 +8,19 @@ import {
 } from '../controller/customer.controller.js'
 import { schemeValidation } from '../middleware/schemeValidator.js'
 import { registerCustomerSchema } from '../schema/customer.schema.js'
-import { verifyTotken } from '../middleware/verifyTotken.js'
+import { verifyToken } from '../middleware/verifyToken.js'
 
 const router = Router()
 
-router.get('/', verifyTotken, getfindAll)
-router.get('/:id', verifyTotken, getfindById)
+router.get('/', verifyToken, getfindAll)
+router.get('/:id', verifyToken, getfindById)
 router.post(
   '/',
-  verifyTotken,
+  verifyToken,
   schemeValidation(registerCustomerSchema),
   postCreate
 )
-router.put('/:id', verifyTotken, putUpdate)
-router.delete('/:id', verifyTotken, deleteDeleteById)
+router.put('/:id', verifyToken, putUpdate)
+router.delete('/:id', verifyToken, deleteDeleteById)
 
 export default router

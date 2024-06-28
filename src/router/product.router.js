@@ -6,14 +6,14 @@ import {
   putProduct,
   deleteProduct
 } from '../controller/product.controller.js'
-import { verifyTotken } from '../middleware/verifyTotken.js'
+import { verifyToken } from '../middleware/verifyToken.js'
 
 const router = Router()
 
-router.get('/', verifyTotken, getAllProducts)
-router.get('/:id', verifyTotken, getProductById)
-router.post('/', verifyTotken, postProduct)
-router.put('/:id', verifyTotken, putProduct)
-router.delete('/:id', verifyTotken, deleteProduct)
+router.get('/', verifyToken, getAllProducts)
+router.get('/:id', verifyToken, getProductById)
+router.post('/', verifyToken, postProduct)
+router.put('/:id', verifyToken, putProduct)
+router.delete('/:id', verifyToken, deleteProduct)
 
 export default router

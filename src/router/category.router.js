@@ -7,15 +7,15 @@ import {
   deleteCategoryById,
   getAllCategories
 } from '../controller/category.controller.js'
-import { verifyTotken } from '../middleware/verifyTotken.js'
+import { verifyToken } from '../middleware/verifyToken.js'
 
 const router = Router()
 
-router.get('/', verifyTotken, getCategories)
-router.get('/findAll', verifyTotken, getAllCategories)
-router.get('/:id', verifyTotken, getCategoryById)
-router.post('/', verifyTotken, postCategory)
-router.put('/:id', verifyTotken, putCategory)
-router.delete('/:id', verifyTotken, deleteCategoryById)
+router.get('/', verifyToken, getCategories)
+router.get('/findAll', verifyToken, getAllCategories)
+router.get('/:id', verifyToken, getCategoryById)
+router.post('/', verifyToken, postCategory)
+router.put('/:id', verifyToken, putCategory)
+router.delete('/:id', verifyToken, deleteCategoryById)
 
 export default router
