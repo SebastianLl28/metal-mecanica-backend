@@ -76,6 +76,40 @@ router.post('/register', schemeValidation(registerUserSchema), postRegisterUser)
  */
 router.post('/login', schemeValidation(loginUserSchema), postLoginUser)
 
+/**
+ * @swagger
+ * /api/auth/verifyToken:
+ *   get:
+ *     tags:
+ *       - auth
+ *     summary: Verify token
+ *     description: Use to verify token
+ *     security:
+ *       - bearerAuth: []
+ *     responses:
+ *       200:
+ *         description: Verify token successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   description: message
+ *                   example: Token is valid
+ *       401:
+ *         description: Unauthorized
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   description: message
+ *                   example: Unauthorized
+ */
 router.get('/verifyToken', verifyToken, getVerifyToken)
 
 export default router
