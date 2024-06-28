@@ -26,6 +26,9 @@ app.use(express.json())
 
 app.use(morgan('dev'))
 
+app.get('/healthcheck', (req, res) => {
+  res.status(200).send('server is running')
+})
 app.use('/api/auth', authRouter)
 app.use('/api/customer', customerRouter)
 app.use('/api/category', categoryRouter)
